@@ -16,11 +16,10 @@ const NavBar = () => {
                         </button>
                         <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                             <div className="navbar-nav ms-auto py-0">
-                                <Link href="index.html" className="nav-item nav-link active">Home</Link>
-                                <Link href="about.html" className="nav-item nav-link">About</Link>
-                                <Link href="service.html" className="nav-item nav-link">Services</Link>
-                                <Link href="package.html" className="nav-item nav-link">Tour Packages</Link>
-                                <Link href="contact.html" className="nav-item nav-link">Contact</Link>
+                                <Link to="/" className="nav-item nav-link active">Home</Link>
+                                <Link to="/services" className="nav-item nav-link">Services</Link>
+                                <Link to="/login" className="nav-item nav-link">Login</Link>
+                                <Link to="contact.html" className="nav-item nav-link">Contact</Link>
                             </div>
                         </div>
                     </nav>
