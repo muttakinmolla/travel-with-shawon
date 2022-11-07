@@ -9,20 +9,15 @@ const Footer = () => {
         <div>
             <div className="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" >
                 <div className="row pt-5">
-                    <div className="col-lg-3 col-md-6 mb-5">
+                    <div className="col-lg-3 col-md-6 mb-5 text-center text-lg-start">
                         <Link to="" className="navbar-brand">
                             <h1 className="text-primary"><span className="text-white">TRAVEL</span>ER</h1>
                         </Link>
-                        <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
+                        <p>Travel with shawon. explore country or worldwide. know the history o historical places.</p>
                         <h6 className="text-white text-uppercase mt-4 mb-3" >Follow Us</h6>
-                        <div className="d-flex justify-content-start">
-                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon></Link>
-                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon></Link>
-                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></Link>
-                            <Link className="btn btn-outline-primary btn-square" to="#"><FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon></Link>
-                        </div>
+                       
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-5">
+                    <div className="col-lg-3 col-md-6 mb-5 text-center text-lg-start">
                         <h5 className="text-white text-uppercase mb-4" >Our Services</h5>
                         <div className="d-flex flex-column justify-content-start">
                             <Link className="text-white-50 mb-2" to="#">About</Link>
@@ -34,7 +29,7 @@ const Footer = () => {
                             <Link className="text-white-50" to="#">Blog</Link>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-5">
+                    <div className="col-lg-3 col-md-6 mb-5 text-center text-lg-start">
                         <h5 className="text-white text-uppercase mb-4">Usefull Links</h5>
                         <div className="d-flex flex-column justify-content-start">
                             <Link className="text-white-50 mb-2" to="#">About</Link>
@@ -46,7 +41,7 @@ const Footer = () => {
                             <Link className="text-white-50" to="#">Blog</Link>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-5">
+                    <div className="col-lg-3 col-md-6 mb-5 text-center text-lg-start">
                         <h5 className="text-white text-uppercase mb-4">Contact Me</h5>
                         <p><FontAwesomeIcon icon={faLocationArrow}></FontAwesomeIcon><span className='ms-2'>Lohagara, Narail, Bangladesh</span></p>
                         <p><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon><span className='ms-2'>+088 01711-338153</span></p>
