@@ -1,6 +1,6 @@
 import React from 'react';
-import bannerImage1 from '../assets/images/carousel-1.jpg';
-import bannerImage2 from '../assets/images/carousel-2.jpg';
+import bannerImage1 from '../../assets/images/carousel-1.jpg';
+import bannerImage2 from '../../assets/images/carousel-2.jpg';
 
 const Banner = () => {
     return (
@@ -13,16 +13,16 @@ const Banner = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img src={bannerImage1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption">
+                        <h1>Explore Yourself by Traveling</h1>
+                        <p>Your Expert Guide is here</p>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <img src={bannerImage2} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption">
+                        <h1>let's go to sea</h1>
+                        <p>I'm your personal Tour Guide here for guiding you.</p>
                     </div>
                 </div>
             </div>

@@ -2,19 +2,15 @@
     z-index: 9;
 }
 
-
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none
+.text-primary {
+    color: #7AB730 !important;
 }
 
 .nav-link {
     display: block;
     padding: .5rem 1rem
 }
+
 .nav-tabs .nav-link {
     border: 1px solid transparent
 }
@@ -44,10 +40,4 @@
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: #7AB730
-}
-
-@media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link {
-        padding: 10px 15px
-    }
 }
