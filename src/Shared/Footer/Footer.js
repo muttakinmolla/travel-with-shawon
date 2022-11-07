@@ -15,7 +15,13 @@ const Footer = () => {
                         </Link>
                         <p>Travel with shawon. explore country or worldwide. know the history o historical places.</p>
                         <h6 className="text-white text-uppercase mt-4 mb-3" >Follow Us</h6>
-                       
+
+                        <div className="d-flex justify-content-lg-start justify-content-center">
+                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon></Link>
+                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon></Link>
+                            <Link className="btn btn-outline-primary btn-square mr-2" to="#"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></Link>
+                            <Link className="btn btn-outline-primary btn-square" to="#"><FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon></Link>
+                        </div>
                     </div>
                     <div className="col-lg-3 col-md-6 mb-5 text-center text-lg-start">
                         <h5 className="text-white text-uppercase mb-4" >Our Services</h5>
