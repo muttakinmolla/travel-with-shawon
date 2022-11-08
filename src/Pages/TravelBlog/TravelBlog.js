@@ -8,6 +8,10 @@ import './TravelBlog.css';
 const TravelBlog = () => {
     return (
         <div>
+            <div className='text-center mt-4 mb-4'>
+                <Link to='/services' className='btn btn-outline-success w-25 m-auto'>More Services</Link>
+
+            </div>
             <div className="container-fluid py-5">
                 <div className="container pt-5 pb-3">
                     <div className="text-center mb-3 pb-3">
@@ -18,11 +22,11 @@ const TravelBlog = () => {
                         <div className="col-lg-4 col-md-6 mb-4 pb-2">
                             <div className="blog-item">
                                 <div className="position-relative">
-                                    <img className="img-fluid w-100" src={TravelBolgImage1} alt=""/>
-                                        <div className="blog-date">
-                                            <h6 className="font-weight-bold mb-n1">01</h6>
-                                            <small className="text-white text-uppercase">Jan</small>
-                                        </div>
+                                    <img className="img-fluid w-100" src={TravelBolgImage1} alt="" />
+                                    <div className="blog-date">
+                                        <h6 className="font-weight-bold mb-n1">01</h6>
+                                        <small className="text-white text-uppercase">Jan</small>
+                                    </div>
                                 </div>
                                 <div className="bg-white p-4">
                                     <div className="d-flex mb-2">
@@ -30,18 +34,18 @@ const TravelBlog = () => {
                                         <span className="text-primary px-2">|</span>
                                         <Link className="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</Link>
                                     </div>
-                                    <Link className="h5 m-0 text-decoration-none" href="">A Massive 7 days Maldivs tour in this year</Link>
+                                    <Link className="h5 m-0 text-decoration-none" to="">A Massive 7 days Maldivs tour in this year</Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 mb-4 pb-2">
                             <div className="blog-item">
                                 <div className="position-relative">
-                                    <img className="img-fluid w-100" src={TravelBolgImage2} alt=""/>
-                                        <div className="blog-date">
-                                            <h6 className="font-weight-bold mb-n1">01</h6>
-                                            <small className="text-white text-uppercase">Jan</small>
-                                        </div>
+                                    <img className="img-fluid w-100" src={TravelBolgImage2} alt="" />
+                                    <div className="blog-date">
+                                        <h6 className="font-weight-bold mb-n1">01</h6>
+                                        <small className="text-white text-uppercase">Jan</small>
+                                    </div>
                                 </div>
                                 <div className="bg-white p-4">
                                     <div className="d-flex mb-2">
@@ -56,11 +60,11 @@ const TravelBlog = () => {
                         <div className="col-lg-4 col-md-6 mb-4 pb-2">
                             <div className="blog-item">
                                 <div className="position-relative">
-                                    <img className="img-fluid w-100" src={TravelBolgImage3} alt=""/>
-                                        <div className="blog-date">
-                                            <h6 className="font-weight-bold mb-n1">01</h6>
-                                            <small className="text-white text-uppercase">Jan</small>
-                                        </div>
+                                    <img className="img-fluid w-100" src={TravelBolgImage3} alt="" />
+                                    <div className="blog-date">
+                                        <h6 className="font-weight-bold mb-n1">01</h6>
+                                        <small className="text-white text-uppercase">Jan</small>
+                                    </div>
                                 </div>
                                 <div className="bg-white p-4">
                                     <div className="d-flex mb-2">

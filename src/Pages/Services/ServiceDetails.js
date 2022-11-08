@@ -55,7 +55,7 @@ const ServiceDetails = () => {
                     <div className=' d-flex justify-content-end'>
                         <Link className='btn btn-success mt-4' to={`/addComment/${_id}`}>Add a comment</Link>
                     </div>
-                    <div className='mt-3 mb-3'>
+                    <div className='mt-3 mb-3 ps-5'>
                         {
                             reviews.map(review => <Review revw={review} key={review._id}></Review>)
                         }

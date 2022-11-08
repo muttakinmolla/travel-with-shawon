@@ -7,8 +7,10 @@ const Review = ({ revw }) => {
     const { _id, service_id, review, name, imageUrl, rating } = revw;
     return (
         <div className='d-flex justify-content-between align-items-center'>
-            <div>
-                <img src={imageUrl} className='review' alt="" />
+            <div className=''>
+                <div className='text-center'>
+                    <img src={imageUrl} className='review' alt="" />
+                </div>
                 <p>{name}</p>
             </div>
             <div>
@@ -20,7 +22,7 @@ const Review = ({ revw }) => {
             <div>
                 <button className='btn btn-warning'><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></button>
             </div>
-
+           
         </div>
     );
 };
