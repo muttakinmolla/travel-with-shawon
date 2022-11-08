@@ -7,6 +7,8 @@ import Services from "../../Pages/Services/Services";
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import AddComment from "../../Pages/AddComment/AddComment";
 import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -37,11 +39,15 @@ const router = createBrowserRouter([
             {
                 path: '/addComment/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
-                element: <AddComment></AddComment>
+                element: <PrivateRoute><AddComment></AddComment></PrivateRoute>
             },
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },

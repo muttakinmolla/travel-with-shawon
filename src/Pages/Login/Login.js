@@ -10,13 +10,13 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
 
-    const {googleSignIn, signInEmailPassword}= useContext(AuthContext);
+    const { googleSignIn, signInEmailPassword } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    
+
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
             .then(result => {
@@ -40,11 +40,8 @@ const Login = () => {
                 const user = result.user;
                 setError('');
                 form.reset();
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });
-                } else {
-                    toast.error('your email is not verified. Please verified your email first')
-                }
+                navigate(from, { replace: true });
+
             })
             .catch(error => {
                 setError(error.message)
