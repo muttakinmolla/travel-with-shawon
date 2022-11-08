@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 import SingleService from './SingleService';
 
@@ -14,7 +14,7 @@ const Services = () => {
                     services.map(service => <SingleService service={service} key={service._id}></SingleService>)
                 }
                 <div className='text-center mt-4 mb-4'>
-                    <button className='btn btn-outline-success w-25 m-auto'>More Services</button>
+                    <Link to='/services' className='btn btn-outline-success w-25 m-auto'>More Services</Link>
 
                 </div>
             </div>

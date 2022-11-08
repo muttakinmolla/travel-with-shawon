@@ -1,0 +1,6 @@
+.boxShadow:hover {
+    box-shadow: -16px 21px 16px 0px rgba(98, 207, 109, 0.75);
+    -webkit-box-shadow: -16px 21px 16px 0px rgba(98, 207, 109, 0.75);
+    -moz-box-shadow: -16px 21px 16px 0px rgba(98, 207, 109, 0.75);
+    transition:  .5s;
+}
