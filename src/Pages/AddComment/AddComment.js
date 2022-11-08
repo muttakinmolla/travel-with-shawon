@@ -4,12 +4,25 @@ import { useLoaderData } from 'react-router-dom';
 const AddComment = () => {
     const service = useLoaderData();
     const { _id } = service;
-    const [user, setUser] = useState({});
+    console.log(_id)
+    const [user, setUser] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleInputChange(e);
-        console.log(user)
+        const form = e.target;
+        const name = form.name.value;
+        const imageUrl = form.imageUrl.value;
+        const rating = form.rating.value;
+        const review = form.review.value;
+        const newUser = {
+            service_id: _id,
+            name: name,
+            imageUrl: imageUrl,
+            rating: rating,
+            review: review
+        }
+        setUser(newUser);
+        console.log(user);
 
         fetch('http://localhost:5000/review', {
             method: 'POST',
@@ -28,21 +41,7 @@ const AddComment = () => {
             })
     }
 
-    const handleInputChange = (e) => {
-        const form = e.target;
-        const name = form.name.value;
-        const imageUrl = form.imageUrl.value;
-        const rating = form.rating.value;
-        const review = form.review.value;
-        const newUser = {
-            service_id: _id,
-            name: name,
-            imageUrl: imageUrl,
-            rating: rating,
-            review: review
-        }
-        setUser(newUser)
-    }
+
     return (
         <div className='container'>
             <h3 className='text-center bg-success w-25 m-auto rounded mt-4 text-white p-2'>Add a Comment Here</h3>

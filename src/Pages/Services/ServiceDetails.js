@@ -2,11 +2,12 @@ import { faCalendarDay, faDollar, faLocation, faStar } from '@fortawesome/free-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Review from '../Review/Review';
 import SingleService from './SingleService';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
-    const [reviews, setReviews] = useState();
+    const [reviews, setReviews] = useState([]);
     const { days, description, imageUrl, name, price, ratting, _id } = service;
 
     useEffect(() => {
@@ -14,8 +15,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 const newReviews = data.filter(review => review.service_id === _id);
-                setReviews(newReviews)
-                console.log( newReviews)
+                setReviews(newReviews);
             })
     }, []);
 
@@ -55,18 +55,10 @@ const ServiceDetails = () => {
                     <div className=' d-flex justify-content-end'>
                         <Link className='btn btn-success mt-4' to={`/addComment/${_id}`}>Add a comment</Link>
                     </div>
-                    <div className='d-flex'>
-                        <div>
-                            <img src="" alt="" />
-                            <p>name:</p>
-                        </div>
-                        <div>
-                            <p>text:</p>
-                        </div>
-                        <div>
-                            <button className='btn btn-warning'>edit</button>
-                        </div>
-
+                    <div className='mt-3 mb-3'>
+                        {
+                            reviews.map(review => <Review revw={review} key={review._id}></Review>)
+                        }
                     </div>
 
                 </div>
