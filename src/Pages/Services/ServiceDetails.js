@@ -1,12 +1,24 @@
 import { faCalendarDay, faDollar, faLocation, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import SingleService from './SingleService';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
+    const [reviews, setReviews] = useState();
     const { days, description, imageUrl, name, price, ratting, _id } = service;
+
+    useEffect(() => {
+        fetch('http://localhost:5000/review')
+            .then(res => res.json())
+            .then(data => {
+                const newReviews = data.filter(review => review.service_id === _id);
+                setReviews(newReviews)
+                console.log( newReviews)
+            })
+    }, []);
+
     return (
         <div className='container'>
             <div className="row">
@@ -42,6 +54,18 @@ const ServiceDetails = () => {
                 <div className="col-lg-7">
                     <div className=' d-flex justify-content-end'>
                         <Link className='btn btn-success mt-4' to={`/addComment/${_id}`}>Add a comment</Link>
+                    </div>
+                    <div className='d-flex'>
+                        <div>
+                            <img src="" alt="" />
+                            <p>name:</p>
+                        </div>
+                        <div>
+                            <p>text:</p>
+                        </div>
+                        <div>
+                            <button className='btn btn-warning'>edit</button>
+                        </div>
 
                     </div>
 
