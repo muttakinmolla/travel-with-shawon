@@ -1,7 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import loginImage from '../../assets/images/loginImage.jpg';
+import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDay, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
 
@@ -17,12 +22,34 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 setError('');
-                // toast.success('successfully login');
+                toast.success('successfully login');
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
             })
+    }
+
+    const handleSignIn = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signInEmailPassword(email, password)
+            .then(result => {
+                const user = result.user;
+                setError('');
+                form.reset();
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                } else {
+                    toast.error('your email is not verified. Please verified your email first')
+                }
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
     }
     return (
         <div className="bg">
@@ -54,7 +81,7 @@ const Login = () => {
                                             </div>
                                             <p className='text-center mt-lg-3'>OR</p>
                                             <div className="">
-                                                <button type='button' onClick={handleGoogleSignIn} className='btn btn-outline-primary w-100'><FaGoogle className='fw-bold' /> login With Google</button>
+                                                <button type='button' onClick={handleGoogleSignIn} className='btn btn-outline-primary w-100'><FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon> login With Google</button>
                                             </div>
                                             <div className="m-auto pt-2">
                                                 <p className='ms-3'>Are you a New User? Please <Link to="/register">Register</Link></p>
