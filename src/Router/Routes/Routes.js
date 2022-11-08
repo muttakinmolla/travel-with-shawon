@@ -5,6 +5,7 @@ import Blog from "../../Pages/Blog/Blog";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Services from "../../Pages/Services/Services";
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
+import AddComment from "../../Pages/AddComment/AddComment";
 
 
 
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
                 element: <ServiceDetails></ServiceDetails>
             },
+            {
+                path: '/addComment/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                element: <AddComment></AddComment>
+            }
         ]
     },
     {

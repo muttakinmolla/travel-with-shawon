@@ -1,7 +1,7 @@
 import { faCalendarDay, faDollar, faLocation, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import SingleService from './SingleService';
 
 const ServiceDetails = () => {
@@ -40,6 +40,10 @@ const ServiceDetails = () => {
                     </div>
                 </div>
                 <div className="col-lg-7">
+                    <div className=' d-flex justify-content-end'>
+                        <Link className='btn btn-success mt-4' to={`/addComment/${_id}`}>Add a comment</Link>
+
+                    </div>
 
                 </div>
             </div>
