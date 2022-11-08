@@ -6,7 +6,17 @@ import './NavBar.css';
 import { AuthContext } from '../../../context/AtuhProvider/AuthProvider';
 
 const NavBar = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     return (
         <div>
             {/* top bar start */}
@@ -60,21 +70,29 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/blog">Blog</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
-                            </li>
-                           
-                            <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </Link>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/">Action</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" to="/">Something else here</Link></li>
-                                </ul>
-                            </li>
+                            {
+                                user?.email ?
+
+                                    <>
+                                        <li className="nav-item dropdown">
+                                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {user.displayName}
+                                            </Link>
+                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li><Link className="dropdown-item" to="/">My Review</Link></li>
+                                                <li><Link className="dropdown-item" to="/">Add Service</Link></li>
+                                                <li><hr className="dropdown-divider" /></li>
+                                                <li><Link className="dropdown-item" onClick={handleLogOut} to="/">Logout</Link></li>
+                                            </ul>
+                                        </li>
+                                    </>
+                                    :
+                                    <>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/login">Login</Link>
+                                        </li>
+                                    </>
+                            }
 
                         </ul>
                     </div>
