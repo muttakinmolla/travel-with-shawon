@@ -12,14 +12,14 @@ const Blog = () => {
                         <div className="col">
                             <div className="collapse multi-collapse" id="multiCollapseExample1">
                                 <div className="card card-body">
-                                    <p><span className='fw-bold'>Answer :</span>
-                                        <ul>
-                                            <li>SQL databases are primarily called as Relational Databases (RDBMS); whereas NoSQL database are primarily called as non-relational or distributed database.</li>
-                                            <li>Sql databases have fixed or static or predefined schema on the other hand non Sql have dynamic schema.</li>
-                                            <li>Sql Vertically Scalable and NonSql Horizontally scalable</li>
-                                            <li>Sql These databases are not suited for hierarchical data storage. and Non sql databases are best suited for hierarchical data storage.</li>
-                                        </ul>
-                                    </p>
+                                    <span className='fw-bold'>Answer :</span>
+                                    <ul>
+                                        <li>SQL databases are primarily called as Relational Databases (RDBMS); whereas NoSQL database are primarily called as non-relational or distributed database.</li>
+                                        <li>Sql databases have fixed or static or predefined schema on the other hand non Sql have dynamic schema.</li>
+                                        <li>Sql Vertically Scalable and NonSql Horizontally scalable</li>
+                                        <li>Sql These databases are not suited for hierarchical data storage. and Non sql databases are best suited for hierarchical data storage.</li>
+                                    </ul>
+
                                 </div>
                             </div>
                         </div>
@@ -49,13 +49,12 @@ const Blog = () => {
                         <div className="col">
                             <div className="collapse multi-collapse" id="multiCollapseExample3">
                                 <div className="card card-body">
-                                    <p><span className='fw-bold'>Answer : </span>
-                                        <ul>
-                                            <li>Javascript is a programming language that is used for writing scripts on the website. We can run Javascript outside the browser with the help of NodeJS. NodeJS is a Javascript runtime environment.</li>
-                                            <li>Javascript can only be run in the browsers. We can run Javascript outside the browser with the help of NodeJS.</li>
-                                            <li>JS is basically used on the client-side. nodeJs It is mostly used on the server-side.</li>
-                                        </ul>
-                                    </p>
+                                    <span className='fw-bold'>Answer : </span>
+                                    <ul>
+                                        <li>Javascript is a programming language that is used for writing scripts on the website. We can run Javascript outside the browser with the help of NodeJS. NodeJS is a Javascript runtime environment.</li>
+                                        <li>Javascript can only be run in the browsers. We can run Javascript outside the browser with the help of NodeJS.</li>
+                                        <li>JS is basically used on the client-side. nodeJs It is mostly used on the server-side.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

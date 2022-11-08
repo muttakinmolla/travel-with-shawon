@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 
 const AddComment = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user.email)
     const service = useLoaderData();
     const { _id } = service;
-    console.log(_id)
-    const [user, setUser] = useState();
+    const [reviewer, setReviewer] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,26 +20,27 @@ const AddComment = () => {
         const newUser = {
             service_id: _id,
             name: name,
+            email: user.email,
             imageUrl: imageUrl,
             rating: rating,
             review: review
         }
-        setUser(newUser);
-        console.log(user);
+        setReviewer(newUser);
+        console.log(reviewer);
 
         fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(reviewer)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('user added successfully')
                     e.target.reset();
+                    toast.success('your comment successfully added');
                 }
             })
     }
