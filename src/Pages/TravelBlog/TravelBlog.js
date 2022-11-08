@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import TravelBolgImage1 from '../../assets/images/blog-1.jpg';
 import TravelBolgImage2 from '../../assets/images/blog-2.jpg';
 import TravelBolgImage3 from '../../assets/images/blog-3.jpg';
+import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 import './TravelBlog.css';
 
 const TravelBlog = () => {
+    const { serviceLimit, setServiceLimit } = useContext(AuthContext);
+    console.log(serviceLimit)
     return (
         <div>
             <div className='text-center mt-4 mb-4'>
-                <Link to='/services' className='btn btn-outline-success w-25 m-auto'>More Services</Link>
+                <Link to='/services' onClick={() => setServiceLimit(false)} className='btn btn-outline-success w-25 m-auto'>More Services</Link>
 
             </div>
             <div className="container-fluid py-5">

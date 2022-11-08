@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './NavBar.css';
+import { AuthContext } from '../../../context/AtuhProvider/AuthProvider';
 
 const NavBar = () => {
+    const { user } = useContext(AuthContext)
     return (
         <div>
             {/* top bar start */}
@@ -61,6 +63,7 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/login">Login</Link>
                             </li>
+                           
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
