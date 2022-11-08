@@ -5,9 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImage from '../../assets/images/loginImage.jpg';
 import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDay, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import useTitle from '../../Hooks/UseTitle';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
@@ -17,8 +16,9 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    useTitle('login')
 
+    useTitle('login');
+    
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
             .then(result => {

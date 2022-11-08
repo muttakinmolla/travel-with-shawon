@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddComment = () => {
     const { user } = useContext(AuthContext);
@@ -9,6 +10,7 @@ const AddComment = () => {
     const service = useLoaderData();
     const { _id } = service;
     const [reviewer, setReviewer] = useState();
+    useTitle('comment')
 
     const handleSubmit = (e) => {
         e.preventDefault();

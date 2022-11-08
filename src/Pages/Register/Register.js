@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const { googleSignIn, createUserEmailPassword, updateUserProfile } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    useTitle('Register')
 
     const googleProvider = new GoogleAuthProvider();
 

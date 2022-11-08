@@ -2,6 +2,7 @@ import { faCalendarDay, faDollar, faLocation, faStar } from '@fortawesome/free-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import Review from '../Review/Review';
 import SingleService from './SingleService';
 
@@ -19,6 +20,7 @@ const ServiceDetails = () => {
             })
     }, []);
 
+    useTitle('service details')
     return (
         <div className='container'>
             <div className="row">

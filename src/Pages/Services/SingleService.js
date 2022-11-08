@@ -3,9 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faCalendarDay, faDollar, faLocationPin, faStar } from '@fortawesome/free-solid-svg-icons';
 import './Service.css';
+import useTitle from '../../hooks/useTitle';
 
 const SingleService = ({ service }) => {
     const { days, description, imageUrl, name, price, ratting, _id } = service;
+    useTitle('service')
     return (
         <div className="col-lg-4 mb-5">
             <div className="card boxShadow">
