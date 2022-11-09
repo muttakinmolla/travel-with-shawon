@@ -69,3 +69,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # b6a11-service-review-client-side-muttakinmolla
+
+
+
+### `bootstrap -5`
+use for ui library
+
+### `firebase`
+firebase use for authentication and user management
+
+### `react hot toast`
+react hot toast use for show message which is could be success or error
+
+### `react photo view`
+react photo view use for popup photo in full screen in on click.
+
+### `Live website link`
+https://traveler-ce3f5.web.app/
+
+### `Develop and Design`
+Md. Muttakin Molla

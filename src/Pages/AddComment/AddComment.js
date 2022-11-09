@@ -28,7 +28,7 @@ const AddComment = () => {
             review: review
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://travel-with-shawon-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -37,7 +37,6 @@ const AddComment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.acknowledged) {
                     e.target.reset();
                     toast.success('your comment successfully added');
