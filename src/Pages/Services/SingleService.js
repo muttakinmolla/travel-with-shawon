@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { faCalendarDay, faDollar, faLocationPin, faStar } from '@fortawesome/free-solid-svg-icons';
 import './Service.css';
 import useTitle from '../../hooks/useTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const SingleService = ({ service }) => {
     const { days, description, imageUrl, name, price, ratting, _id } = service;
@@ -11,7 +12,12 @@ const SingleService = ({ service }) => {
     return (
         <div className="col-lg-4 mb-5">
             <div className="card boxShadow">
-                <img src={imageUrl} className="card-img-top" alt="..." />
+                <PhotoProvider>
+                    <PhotoView src={imageUrl}>
+
+                        <img src={imageUrl} className="card-img-top" alt="..." />
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="card-body">
                     <h5 className="card-title text-center pb-2 text-primary">{name}</h5>
                     <div className="d-flex justify-content-between align-items-center pt-2 pb-2">

@@ -3,6 +3,7 @@ import React from 'react';
 import { faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
 import './review.css';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Review = ({ revw }) => {
     const { _id, service_id, review, name, imageUrl, rating } = revw;
@@ -12,7 +13,12 @@ const Review = ({ revw }) => {
         <div className='row shadow-lg p-3 mb-5 bg-body rounded'>
             <div className='col-lg-2'>
                 <div className=''>
-                    <img src={imageUrl} className='review' alt="" />
+                    <PhotoProvider>
+                        <PhotoView src={imageUrl}>
+                            <img src={imageUrl} className='review' alt="" />
+
+                        </PhotoView>
+                    </PhotoProvider>
                 </div>
                 <p>{name}</p>
             </div>
