@@ -1,6 +1,5 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 
@@ -9,7 +8,11 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <Spinner variant='primary'></Spinner>
+        return <div className="d-flex justify-content-center mt-5 mb-5">
+            <div className="spinner-border text-success mt-5 mb-5" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
     }
 
     if (user) {

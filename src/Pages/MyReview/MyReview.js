@@ -29,6 +29,8 @@ const MyReview = () => {
 
     return (
         <div className='container pt-5'>
+
+            <h3 className='text-center mt-2 mb-5 text-success'>My All Review</h3>
             {
                 reviews.map(review => <Review revw={review} key={review._id}></Review>)
             }

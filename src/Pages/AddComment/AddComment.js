@@ -6,7 +6,6 @@ import useTitle from '../../hooks/useTitle';
 
 const AddComment = () => {
     const { user } = useContext(AuthContext);
-    console.log(user.email)
     const service = useLoaderData();
     const { _id } = service;
     const [reviewer, setReviewer] = useState();
@@ -14,6 +13,7 @@ const AddComment = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const form = e.target;
         const name = form.name.value;
         const imageUrl = form.imageUrl.value;
@@ -21,21 +21,19 @@ const AddComment = () => {
         const review = form.review.value;
         const newUser = {
             service_id: _id,
-            name: name,
             email: user.email,
+            name: name,
             imageUrl: imageUrl,
             rating: rating,
             review: review
         }
-        setReviewer(newUser);
-        console.log(reviewer);
 
         fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(reviewer)
+            body: JSON.stringify(newUser)
         })
             .then(res => res.json())
             .then(data => {
@@ -47,13 +45,20 @@ const AddComment = () => {
             })
     }
 
+    const handleInputBlur = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...reviewer }
+        newUser[name] = value;
+        setReviewer(newUser);
+    }
 
     return (
         <div className='container'>
             <h3 className='text-center bg-success w-25 m-auto rounded mt-4 text-white p-2'>Add a Comment Here</h3>
             <div className="row mt-5">
                 <div className="col-lg-6 m-auto mb-5">
-                    <form action="" onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <input type="text" className="form-control" name='name' placeholder="write your name" />
                         </div>
