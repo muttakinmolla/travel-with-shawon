@@ -6,7 +6,6 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const [serviceLimit, setServiceLimit] = useState(true);
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -55,11 +54,9 @@ const AuthProvider = ({ children }) => {
         createUserEmailPassword,
         logOut,
         loading,
-        serviceLimit,
         signInEmailPassword,
         googleSignIn,
         updateUserProfile,
-        setServiceLimit,
 
     }
     return (

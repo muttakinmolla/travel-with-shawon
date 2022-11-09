@@ -7,8 +7,6 @@ import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 import './TravelBlog.css';
 
 const TravelBlog = () => {
-    const { serviceLimit, setServiceLimit } = useContext(AuthContext);
-    console.log(serviceLimit)
     return (
         <div>
             <div className="container-fluid py-5">
