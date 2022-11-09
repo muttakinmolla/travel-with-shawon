@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    // const { user } = useContext(AuthContext)
+    // console.log(user.email)
     useTitle('Blog')
     return (
         <div className='container'>

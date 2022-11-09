@@ -7,6 +7,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [serviceLimit, setServiceLimit] = useState(true);
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -24,14 +25,13 @@ const AuthProvider = ({ children }) => {
     const googleSignIn = (provider) => {
         setLoading(true)
         return signInWithPopup(auth, provider);
+        
     }
 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser == null || currentUser.emailVerified) {
-                setUser(currentUser)
-            }
+            setUser(currentUser)
             setLoading(false);
         });
         return () => {

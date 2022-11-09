@@ -12,7 +12,7 @@ const ServiceDetails = () => {
     const { days, description, imageUrl, name, price, ratting, _id } = service;
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 const newReviews = data.filter(review => review.service_id === _id);

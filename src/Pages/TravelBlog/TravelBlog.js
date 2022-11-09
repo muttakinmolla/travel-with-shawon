@@ -11,10 +11,6 @@ const TravelBlog = () => {
     console.log(serviceLimit)
     return (
         <div>
-            <div className='text-center mt-4 mb-4'>
-                <Link to='/services' onClick={() => setServiceLimit(false)} className='btn btn-outline-success w-25 m-auto'>More Services</Link>
-
-            </div>
             <div className="container-fluid py-5">
                 <div className="container pt-5 pb-3">
                     <div className="text-center mb-3 pb-3">

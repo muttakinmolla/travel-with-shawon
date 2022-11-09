@@ -79,7 +79,7 @@ const NavBar = () => {
                                                 {user.displayName}
                                             </Link>
                                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><Link className="dropdown-item" to="/">My Review</Link></li>
+                                                <li><Link className="dropdown-item" to="/myReview">My Review</Link></li>
                                                 <li><Link className="dropdown-item" to="/">Add Service</Link></li>
                                                 <li><hr className="dropdown-divider" /></li>
                                                 <li><Link className="dropdown-item" onClick={handleLogOut} to="/">Logout</Link></li>
