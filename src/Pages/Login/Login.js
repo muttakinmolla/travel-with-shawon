@@ -36,7 +36,6 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         localStorage.setItem('travelerToken', data.token)
                     })
                 setError('');
@@ -56,7 +55,6 @@ const Login = () => {
         signInEmailPassword(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 
                 const currentUser = {
                     email: user.email

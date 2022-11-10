@@ -11,6 +11,7 @@ import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Review from "../../Pages/Review/Review";
 import MyReview from "../../Pages/MyReview/MyReview";
+import UpdateReview from "../../Pages/UpdateReview/UpdateReview";
 
 
 
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
                 path: '/addComment/:id',
                 loader: ({ params }) => fetch(`https://travel-with-shawon-server.vercel.app/services/${params.id}`),
                 element: <PrivateRoute><AddComment></AddComment></PrivateRoute>
+            },
+            {
+                path: '/updateReview/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
+                element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>
             },
             {
                 path: '/myReview',

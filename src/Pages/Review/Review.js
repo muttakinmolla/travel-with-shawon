@@ -7,6 +7,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Review = ({ revw }) => {
     const { _id, service_id, review, name, imageUrl, rating } = revw;
+    console.log(_id)
 
     const currentRoute = window.location.pathname;
     return (
@@ -29,7 +30,7 @@ const Review = ({ revw }) => {
                 <p><FontAwesomeIcon icon={faStar} className="text-warning"></FontAwesomeIcon>{rating}</p>
             </div>
             <div className='col-1'>
-                <Link>{currentRoute === '/myReview' && <FontAwesomeIcon icon={faEdit} className="text-warning"></FontAwesomeIcon>}</Link>
+                <Link to={`/updateReview/${_id}`}>{currentRoute === '/myReview' && <FontAwesomeIcon icon={faEdit} className="text-warning"></FontAwesomeIcon>}</Link>
             </div>
 
             <hr />

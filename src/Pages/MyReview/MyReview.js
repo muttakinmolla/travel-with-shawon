@@ -31,9 +31,13 @@ const MyReview = () => {
         <div className='container pt-5'>
 
             <h3 className='text-center mt-2 mb-5 text-success'>My All Review</h3>
-            {
-                reviews.map(review => <Review revw={review} key={review._id}></Review>)
-            }
+            <div className="row">
+                <div className="col-6 m-auto">
+                    {
+                        reviews.map(review => <Review revw={review} key={review._id}></Review>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };
