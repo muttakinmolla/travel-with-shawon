@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './NavBar.css';
@@ -53,6 +53,7 @@ const NavBar = () => {
                 </div>
             </div>
             {/* top bar end */}
+
             <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
                 <div className="container">
                     <Link className="navbar-brand" to="/"><h1 className="text-primary"><span className="text-dark">TRAVEL</span>ER</h1></Link>
@@ -61,20 +62,20 @@ const NavBar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                            <li className="nav-item mx-2">
+                                <NavLink className="nav-link {({isActive})=> isActive? 'active' : undefined}" aria-current="page" to="/">Home</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/services">Services</Link>
+                            <li className="nav-item mx-2">
+                                <NavLink className="nav-link {({isActive})=> isActive? 'active' : undefined}" to="/services">Services</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/blog">Blog</Link>
+                            <li className="nav-item mx-2">
+                                <NavLink className="nav-link" to="/blog">Blog</NavLink>
                             </li>
                             {
                                 user?.email ?
 
                                     <>
-                                        <li className="nav-item dropdown">
+                                        <li className="nav-item dropdown mx-2">
                                             <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 {user.displayName}
                                             </Link>
@@ -88,8 +89,8 @@ const NavBar = () => {
                                     </>
                                     :
                                     <>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" to="/login">Login</Link>
+                                        <li className="nav-item mx-2">
+                                            <NavLink className="nav-link" to="/login">Login</NavLink>
                                         </li>
                                     </>
                             }
