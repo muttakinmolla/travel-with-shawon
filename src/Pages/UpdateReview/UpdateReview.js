@@ -28,7 +28,7 @@ const UpdateReview = () => {
         }
         console.log(newReview)
 
-        fetch(`http://localhost:5000/reviewUpdate/${_id}`, {
+        fetch(`https://travel-with-shawon-server/reviewUpdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const UpdateReview = () => {
     }
     return (
         <div className='container'>
-            <h3 className='text-center bg-success w-25 m-auto rounded mt-4 text-white p-2'>Add a Comment Here</h3>
+            <h3 className='text-center bg-success w-25 m-auto rounded mt-4 text-white p-2'>Update Comment Here</h3>
             <div className="row mt-5">
                 <div className="col-lg-6 m-auto mb-5">
                     <form onSubmit={handleUpdateReview}>
