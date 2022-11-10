@@ -11,7 +11,7 @@ const Review = ({ revw }) => {
     const currentRoute = window.location.pathname;
     return (
         <div className='row shadow-lg p-3 mb-5 bg-body rounded'>
-            <div className='col-lg-2'>
+            <div className='col-2'>
                 <div className=''>
                     <PhotoProvider>
                         <PhotoView src={imageUrl}>
@@ -22,13 +22,13 @@ const Review = ({ revw }) => {
                 </div>
                 <p>{name}</p>
             </div>
-            <div className='col-lg-7'>
+            <div className='col-7'>
                 <p>{review}</p>
             </div>
-            <div className='col-lg-2'>
+            <div className='col-2'>
                 <p><FontAwesomeIcon icon={faStar} className="text-warning"></FontAwesomeIcon>{rating}</p>
             </div>
-            <div className='col-lg-1'>
+            <div className='col-1'>
                 <Link>{currentRoute === '/myReview' && <FontAwesomeIcon icon={faEdit} className="text-warning"></FontAwesomeIcon>}</Link>
             </div>
 

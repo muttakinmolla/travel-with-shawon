@@ -1,6 +1,8 @@
 import React from 'react';
 import bannerImage1 from '../../assets/images/carousel-1.jpg';
 import bannerImage2 from '../../assets/images/carousel-2.jpg';
+import bannerImage3 from '../../assets/images/sajekBanner.jpg';
+import './Banner.css';
 
 const Banner = () => {
     return (
@@ -12,17 +14,33 @@ const Banner = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={bannerImage1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block carousel-caption">
+                    <div className=' carousel-img'>
+
+                        <img src={bannerImage1} className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-caption d-md-block carousel-caption">
                         <h1>Explore Yourself by Traveling</h1>
                         <p>Your Expert Guide is here</p>
                     </div>
                 </div>
                 <div className="carousel-item">
+                    <div className=' carousel-img'>
+
                     <img src={bannerImage2} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block carousel-caption">
+                    </div>
+                    <div className="carousel-caption d-md-block carousel-caption">
                         <h1>let's go to sea</h1>
                         <p>I'm your personal Tour Guide here for guiding you.</p>
+                    </div>
+                </div>
+                <div className="carousel-item">
+                    <div className=' carousel-img'>
+
+                    <img src={bannerImage3} className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-caption d-md-block carousel-caption">
+                        <h1>It's darjiling Of Bangladesh</h1>
+                        <p>Let's explore the beauty of Sajek Rangamati</p>
                     </div>
                 </div>
             </div>

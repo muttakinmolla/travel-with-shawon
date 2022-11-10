@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AtuhProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
@@ -9,6 +9,7 @@ const AddComment = () => {
     const service = useLoaderData();
     const { _id } = service;
     const [reviewer, setReviewer] = useState();
+    const navigate = useNavigate();
     useTitle('comment')
 
     const handleSubmit = (e) => {
@@ -39,18 +40,12 @@ const AddComment = () => {
             .then(data => {
                 if (data.acknowledged) {
                     e.target.reset();
+                    navigate(`/services/${_id}`)
                     toast.success('your comment successfully added');
                 }
             })
     }
 
-    const handleInputBlur = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        const newUser = { ...reviewer }
-        newUser[name] = value;
-        setReviewer(newUser);
-    }
 
     return (
         <div className='container'>
