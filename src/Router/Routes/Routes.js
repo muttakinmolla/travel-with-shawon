@@ -45,8 +45,8 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddComment></AddComment></PrivateRoute>
             },
             {
-                path: '/updateReview/:id',
-                loader: ({ params }) => fetch(`https://travel-with-shawon-server/reviews/${params.id}`),
+                path: '/reviews/:id',
+                loader: ({ params }) => fetch(`https://travel-with-shawon-server.vercel.app/reviews/${params.id}`),
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>
             },
             {

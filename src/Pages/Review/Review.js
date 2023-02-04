@@ -30,7 +30,7 @@ const Review = ({ revw }) => {
                 <p><FontAwesomeIcon icon={faStar} className="text-warning"></FontAwesomeIcon>{rating}</p>
             </div>
             <div className='col-1'>
-                <Link to={`/updateReview/${_id}`}>{currentRoute === '/myReview' && <FontAwesomeIcon icon={faEdit} className="text-warning"></FontAwesomeIcon>}</Link>
+                <Link to={`/reviews/${_id}`}>{currentRoute === '/myReview' && <FontAwesomeIcon icon={faEdit} className="text-warning"></FontAwesomeIcon>}</Link>
             </div>
 
             <hr />

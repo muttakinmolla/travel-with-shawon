@@ -27,6 +27,10 @@ const MyReview = () => {
             })
     }, [user?.email])
 
+    if (!user.email) {
+        <p>Loading .....</p>
+    }
+
     return (
         <div className='container pt-5'>
 

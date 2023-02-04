@@ -28,7 +28,7 @@ const UpdateReview = () => {
         }
         console.log(newReview)
 
-        fetch(`https://travel-with-shawon-server/reviewUpdate/${_id}`, {
+        fetch(`https://travel-with-shawon-server.vercel.app/reviewUpdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
